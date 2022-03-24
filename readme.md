@@ -1,0 +1,1 @@
+This function aggregates pub/sub dataset when new event data lands on the cloud storage bucket.
