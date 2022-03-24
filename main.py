@@ -1,3 +1,5 @@
-def main(event, context):
-    print(event, context)
+from src.main import handle_event
 
+
+def main(event, context):
+    handle_event(event, context)
