@@ -22,8 +22,8 @@ def aggregate_data():
     job_config.create_disposition = 'CREATE_IF_NEEDED'
     job_config.write_disposition = 'WRITE_APPEND'
 
-    query = """select count(domain_sessionid) as domain_sessionid_count, count(event_id) as event_id_count
-                from `{}.{}.{}` group by domain_sessionid, event_id 
+    query = """select count(domain_session_id) as domain_sessionid_count, count(event_id) as event_id_count
+                from `{}.{}.{}` group by domain_session_id, event_id 
              """.format(project_name, dataset_id, tablename)
     aggregated = bq_client.query(query, job_config=job_config)
     return aggregated.result()
