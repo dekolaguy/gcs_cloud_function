@@ -20,7 +20,7 @@ def aggregate_data():
     job_config = bigquery.QueryJobConfig()
     job_config.destination = f"{destination_project}.{destination_dataset}.{destination_tablename}"
     job_config.create_disposition = 'CREATE_IF_NEEDED'
-    job_config.write_disposition = 'WRITE_APPEND'
+    job_config.write_disposition = 'WRITE_TRUNCATE'
 
     query = """select count(domain_session_id) as domain_sessionid_count, count(event_id) as event_id_count
                 from `{}.{}.{}` group by domain_session_id, event_id 
