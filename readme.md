@@ -6,7 +6,9 @@ Deployment
 
 ##### Deployment command
 
-``` gcloud functions deploy main --trigger-event google.storage.object.finalize --trigger-resource filtered-event-rows --runtime python39 --env-vars-file .env.yaml --project ct-sp-staging```
+``` 
+gcloud functions deploy main --trigger-event google.storage.object.finalize --trigger-resource filtered-event-rows --runtime python39 --env-vars-file .env.yaml --project ct-sp-staging
+```
 
 ###### Params
 
